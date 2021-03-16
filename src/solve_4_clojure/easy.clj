@@ -13,7 +13,7 @@
 
 ;; Replicate a Sequence
 (defn replicate-seq [values n]
-  (reduce concat (map #(map (fn [x] %) (range 0 n)) values)))
+  (reduce concat (map #(map (fn [_] %) (range 0 n)) values)))
 
 (replicate-seq [1 2 3] 2)
 
