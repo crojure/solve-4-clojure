@@ -28,3 +28,9 @@
         (map inc)
         (reduce +))
    11)
+
+;; Map Defaults
+(defn map-defaults [default keys]
+  (apply merge (map #(hash-map % default) keys)))
+
+(map-defaults 0 [:a :b :c])
