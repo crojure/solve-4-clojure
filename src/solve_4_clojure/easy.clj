@@ -20,3 +20,8 @@
 (replicate-seq [[1 2] [3 4]] 2)
 
 (= (replicate-seq [1 2 3] 2) '(1 1 2 2 3 3))
+
+(defn my-interleave [val values]
+  (pop (reduce #(conj (conj %1 %2) val) [] values)))
+
+(my-interleave 0 [1 2 3])
