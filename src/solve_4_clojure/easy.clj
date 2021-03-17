@@ -25,3 +25,13 @@
   (pop (reduce #(conj (conj %1 %2) val) [] values)))
 
 (my-interleave 0 [1 2 3])
+
+;; Drop every nth item
+(defn drop-every-nth [vec n]
+  (loop [source vec
+         dest []]
+    (if (empty? source)
+      (flatten dest)
+      (recur (drop n source) (conj dest (take (dec n) source))))))
+
+(drop-every-nth [1 2 3 4 5 6 7 8] 3)
